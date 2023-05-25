@@ -5,7 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="9531"/>
     </dependencies>
     <objects>
-        <customObject id="-2" userLabel="File's Owner" customClass="____PluginClassName____">
+        <customObject id="-2" userLabel="File's Owner" customClass="typollipse">
             <connections>
                 <outlet property="dialog" destination="1" id="Tkv-lP-HY5"/>
                 <outlet property="textField" destination="xmJ-rn-hjB" id="mpt-n7-s9B"/>

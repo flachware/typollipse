@@ -16,8 +16,8 @@ import objc
 from GlyphsApp import *
 from GlyphsApp.plugins import *
 
-class ____PluginClassName____ (PalettePlugin):
-	
+class typollipse (PalettePlugin):
+
 	dialog = objc.IBOutlet()
 	textField = objc.IBOutlet()
 
