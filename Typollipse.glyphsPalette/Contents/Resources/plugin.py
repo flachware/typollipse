@@ -30,7 +30,7 @@ class typollipse (PalettePlugin):
 			'es': 'Typollipse',
 			'pt': 'Typollipse',
 			})
-		
+
 		# Load .nib dialog (without .extension)
 		self.loadNib('IBdialog', __file__)
 
@@ -39,13 +39,13 @@ class typollipse (PalettePlugin):
 		# Adding a callback for the 'GSUpdateInterface' event
 		Glyphs.addCallback(self.update, UPDATEINTERFACE)
 
-	@objc.python_method	
+	@objc.python_method
 	def __del__(self):
 		Glyphs.removeCallback(self.update)
 
 	@objc.python_method
 	def update(self, sender):
-		
+
 		text = []
 		# Extract font from sender
 		currentTab = sender.object()
