@@ -24,11 +24,11 @@ class typollipse (PalettePlugin):
 	@objc.python_method
 	def settings(self):
 		self.name = Glyphs.localize({
-			'en': 'My Palette',
-			'de': 'Meine Palette',
-			'fr': 'Ma palette',
-			'es': 'Mi panel',
-			'pt': 'Meu painel',
+			'en': 'Typollipse',
+			'de': 'Typollipse',
+			'fr': 'Typollipse',
+			'es': 'Typollipse',
+			'pt': 'Typollipse',
 			})
 		
 		# Load .nib dialog (without .extension)
