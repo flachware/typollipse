@@ -36,8 +36,8 @@ class typollipse (PalettePlugin):
 
 	@objc.IBAction
 	def setAnisotropy_(self, sender):
-		self.logToConsole(sender.floatValue())
-	
+		Glyphs.font.userData['anisotropy'] = sender.floatValue()
+
 	@objc.IBAction
 	def setCurvature_(self, sender):
 		self.logToConsole('Button clicked')
