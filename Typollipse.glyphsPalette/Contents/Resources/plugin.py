@@ -33,7 +33,11 @@ class typollipse (PalettePlugin):
 
 		# Load .nib dialog (without .extension)
 		self.loadNib('IBdialog', __file__)
-
+	
+	@objc.python_method
+	def start(self):
+		self.logToConsole(Glyphs.font.userData['anisotropy'])
+	
 	@objc.IBAction
 	def setAnisotropy_(self, sender):
 		Glyphs.font.userData['anisotropy'] = sender.floatValue()
