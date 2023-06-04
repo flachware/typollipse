@@ -9,6 +9,7 @@
         <customObject id="-2" userLabel="File's Owner" customClass="typollipse">
             <connections>
                 <outlet property="dialog" destination="1" id="Tkv-lP-HY5"/>
+                <outlet property="textField" destination="3hj-sm-sba" id="krl-1j-lvR"/>
             </connections>
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
