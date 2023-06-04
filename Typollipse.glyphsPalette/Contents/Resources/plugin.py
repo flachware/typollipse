@@ -8,7 +8,7 @@ class typollipse (PalettePlugin):
 
 	dialog = objc.IBOutlet()
 	textField = objc.IBOutlet()
-	anisotropy = None
+	anisotropy = 0
 	
 	@objc.python_method
 	def settings(self):
@@ -30,7 +30,11 @@ class typollipse (PalettePlugin):
 	
 	@objc.python_method
 	def opened(self, sender):
-		self.anisotropy = self.windowController().document().font.userData['anisotropy']
+		anisotropy = self.windowController().document().font.userData['anisotropy']
+		
+		if anisotropy is not None:
+			self.anisotropy = anisotropy
+		
 		self.textField.setFloatValue_(self.anisotropy)
 	
 	@objc.python_method
