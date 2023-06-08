@@ -7,6 +7,7 @@ from helpers import getPaths, update
 
 class typollipse (PalettePlugin):
 	dialog = objc.IBOutlet()
+	label = objc.IBOutlet()
 	textField = objc.IBOutlet()
 	anisotropy = 0
 	
@@ -25,6 +26,11 @@ class typollipse (PalettePlugin):
 	
 	@objc.python_method
 	def start(self):
+		self.label.setStringValue_(Glyphs.localize({
+			'en': 'Anisotropy:',
+			'de': 'Anisotropie:',
+			}))
+	
 		Glyphs.addCallback(self.opened, DOCUMENTOPENED)
 		Glyphs.addCallback(self.closed, DOCUMENTCLOSED)
 	
