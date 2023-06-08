@@ -53,7 +53,14 @@ def getCurvature(self, anisotropy, segment):
 
 	def create_points(p1, p4, superness):
 		width = abs(p4[0] - p1[0])
-		height = abs(p4[1] - p1[1]) * (1 + anisotropy)
+		height = abs(p4[1] - p1[1])
+		
+		if height >= width:
+			height = height * (1 + anisotropy)
+		
+		else:
+			width = width * (1 + anisotropy)
+		
 		d = dict()
 
 		d['x1'] = 0
