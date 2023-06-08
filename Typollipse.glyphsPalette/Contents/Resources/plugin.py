@@ -2,10 +2,10 @@ from __future__ import division, print_function, unicode_literals
 import objc
 from GlyphsApp import *
 from GlyphsApp.plugins import *
+from helpers import getPaths, update
 
 
 class typollipse (PalettePlugin):
-
 	dialog = objc.IBOutlet()
 	textField = objc.IBOutlet()
 	anisotropy = 0
@@ -51,11 +51,13 @@ class typollipse (PalettePlugin):
 	def setAnisotropy_(self, sender):
 		self.anisotropy = sender.floatValue()
 		Glyphs.font.userData['anisotropy'] = self.anisotropy
-
+	
 	@objc.IBAction
-	def setCurvature_(self, sender):
-		self.logToConsole('Button clicked')
-
+	def handleClick_(self, sender):
+		paths = getPaths(self)
+		
+		update(self, self.anisotropy, paths)
+	
 	@objc.python_method
 	def __file__(self):
 		return __file__
