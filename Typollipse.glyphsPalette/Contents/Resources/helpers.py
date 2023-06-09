@@ -11,23 +11,30 @@ def getPaths(self):
 			nodes = []
 			segments = []
 			
-			# Get all selected nodes
+			# Get selected curve nodes only
 			for node in path.nodes:
-				if node.selected is True:
+				if node.selected is True and node.type is 'curve':
 					nodes.append(node)
-	
-			# Group nodes as segments
-			for i, node in enumerate(nodes):
+						
+			for node in nodes:
 				segment = []
 				
-				# Create a segment for every end curve node
-				if node.type is 'curve' and i is not 0 and nodes[i - 1].type is not 'curve':
-					segment.extend([nodes[i - 3], nodes[i - 2], nodes[i - 1], node])
+				# Get all nodes of the segment
+				for i in range(3, -1, -1):
+					n = path.nodes[node.index - i]
+					
+					# Check if the nodes are selected
+					if n.selected is True:
+						segment.append(n)
+				
+				# Check if the segment is complete
+				if len(segment) is 4:
 					segments.append(segment)
 			
-			# Group segments as path
-			paths.append(segments)
-			
+			# Check if the path has a selected segment
+			if len(segments) is not 0:
+				paths.append(segments)
+	
 	return paths
 
 

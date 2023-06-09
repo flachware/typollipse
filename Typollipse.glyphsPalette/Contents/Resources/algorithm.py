@@ -5,8 +5,6 @@ def getCurvature(self, anisotropy, segment):
 	precision = 6
 	p1 = (segment[0].position[0], segment[0].position[1])
 	p4 = (segment[3].position[0], segment[3].position[1])
-	self.logToConsole(p1)
-	self.logToConsole(p4)
 	
 	def curvature(x1, x2, x3, x4, y1, y2, y3, y4, t):
 		x_1 = bezier_prime(x1, x2, x3, x4, t)
