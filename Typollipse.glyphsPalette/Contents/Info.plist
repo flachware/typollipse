@@ -13,15 +13,13 @@
 	<key>CFBundleName</key>
 	<string>Typollipse</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.0</string> <!-- 1.0 -->
+	<string>1.0</string>
 	<key>CFBundleVersion</key>
-	<string>____BundleVersion____</string> <!-- 123 -->
+	<string>1.0</string>
 	<key>UpdateFeedURL</key>
 	<string>https://raw.githubusercontent.com/flachware/typollipse/main/Typollipse.glyphsPalette/Contents/Info.plist</string>
 	<key>productPageURL</key>
-	<string>____ProductPageURL____</string>
-	<key>productReleaseNotes</key>
-	<string>____LatestReleaseNotes____</string>
+	<string>https://github.com/flachware/typollipse</string>
 	<key>NSHumanReadableCopyright</key>
 	<string>Copyright, Flachware e.U., 2023</string>
 	<key>NSPrincipalClass</key>
