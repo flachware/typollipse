@@ -31,12 +31,9 @@
                     </connections>
                 </button>
                 <textField verticalHuggingPriority="750" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3hj-sm-sba">
-                    <rect key="frame" x="80" y="35" width="54" height="16"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="50" id="KM4-6r-umf"/>
-                    </constraints>
+                    <rect key="frame" x="81" y="35" width="198" height="16"/>
                     <textFieldCell key="cell" lineBreakMode="truncatingTail" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" placeholderString="0 %" usesSingleLineMode="YES" id="kZA-lh-tTj">
-                        <numberFormatter key="formatter" formatterBehavior="default10_4" numberStyle="percent" lenient="YES" formatWidth="-1" minimumIntegerDigits="1" maximumIntegerDigits="2000000000" maximumFractionDigits="1" id="VKL-rJ-5E3">
+                        <numberFormatter key="formatter" formatterBehavior="default10_4" numberStyle="percent" lenient="YES" formatWidth="-1" minimumIntegerDigits="1" maximumIntegerDigits="2000000000" maximumFractionDigits="3" id="VKL-rJ-5E3">
                             <integer key="multiplier" value="100"/>
                             <real key="minimum" value="0.0"/>
                         </numberFormatter>
@@ -49,7 +46,7 @@
                     </connections>
                 </textField>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="3aR-B2-jM5">
-                    <rect key="frame" x="7" y="35" width="72" height="16"/>
+                    <rect key="frame" x="7" y="35" width="73" height="16"/>
                     <textFieldCell key="cell" title="Anisotropy:" usesSingleLineMode="YES" id="vzR-T3-8aM">
                         <font key="font" metaFont="system"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -61,7 +58,7 @@
                 <constraint firstItem="3hj-sm-sba" firstAttribute="baseline" secondItem="3aR-B2-jM5" secondAttribute="baseline" id="4h2-4E-yft"/>
                 <constraint firstItem="3aR-B2-jM5" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="9" id="DRp-Qt-h0l"/>
                 <constraint firstItem="3hj-sm-sba" firstAttribute="leading" secondItem="3aR-B2-jM5" secondAttribute="trailing" constant="5" id="IZo-Ea-TOC"/>
-                <constraint firstItem="3hj-sm-sba" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="82" id="mCb-u5-x4Y"/>
+                <constraint firstAttribute="trailing" secondItem="3hj-sm-sba" secondAttribute="trailing" constant="7" id="aXk-s5-tnk"/>
                 <constraint firstItem="3hj-sm-sba" firstAttribute="top" secondItem="1" secondAttribute="top" constant="7" id="n99-zA-Gda"/>
             </constraints>
             <connections>
