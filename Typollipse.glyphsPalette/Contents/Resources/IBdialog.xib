@@ -8,6 +8,7 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="typollipse">
             <connections>
+                <outlet property="button" destination="7VX-7b-9zg" id="UGy-3F-pgS"/>
                 <outlet property="dialog" destination="1" id="Tkv-lP-HY5"/>
                 <outlet property="label" destination="3aR-B2-jM5" id="6BC-zq-iZ6"/>
                 <outlet property="textField" destination="3hj-sm-sba" id="krl-1j-lvR"/>

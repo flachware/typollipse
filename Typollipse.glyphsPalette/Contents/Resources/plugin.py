@@ -9,6 +9,7 @@ class typollipse (PalettePlugin):
 	dialog = objc.IBOutlet()
 	label = objc.IBOutlet()
 	textField = objc.IBOutlet()
+	button = objc.IBOutlet()
 	anisotropy = 0
 	
 	@objc.python_method
@@ -41,7 +42,19 @@ class typollipse (PalettePlugin):
 			'ru': 'Анизотропия',
 			'tr': 'Anizotropi',
 			}))
-	
+		
+		self.button.setTitle_(Glyphs.localize({
+			'en': 'Apply',
+			#'cs': 'Apply', todo
+			'de': 'Anwenden',
+			'es': 'Aplicar',
+			'fr': 'Appliquer',
+			'it': 'Applica',
+			'pt': 'Aplicar',
+			'ru': 'Применить',
+			'tr': 'Uygula',
+			}))
+		
 		Glyphs.addCallback(self.opened, DOCUMENTOPENED)
 		Glyphs.addCallback(self.closed, DOCUMENTCLOSED)
 	
@@ -79,7 +92,6 @@ class typollipse (PalettePlugin):
 		else:
 			# Inform user that there is no valid selection
 			pass
-
 
 	@objc.python_method
 	def __file__(self):
