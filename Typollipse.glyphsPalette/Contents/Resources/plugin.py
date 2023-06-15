@@ -3,6 +3,7 @@ import objc
 from GlyphsApp import *
 from GlyphsApp.plugins import *
 from helpers import getPaths, update
+from strings import pluginName, labelTitle, buttonTitle
 
 
 class typollipse (PalettePlugin):
@@ -14,46 +15,15 @@ class typollipse (PalettePlugin):
 	
 	@objc.python_method
 	def settings(self):
-		self.name = Glyphs.localize({
-			'en': 'Typollipse',
-			'cs': 'Typolipsa',
-			'de': 'Typollipse',
-			'es': 'Tipolipse',
-			'fr': 'Typollipse',
-			'it': 'Tipollisse',
-			'pt': 'Tipolipse',
-			'ru': 'Типоллипс',
-			'tr': 'Tipolips',
-			})
+		self.name = Glyphs.localize(pluginName)
 
 		# Load .nib dialog (without .extension)
 		self.loadNib('IBdialog', __file__)
 	
 	@objc.python_method
 	def start(self):
-		self.label.setStringValue_(Glyphs.localize({
-			'en': 'Anisotropy:',
-			'cs': 'Anizotropie',
-			'de': 'Anisotropie:',
-			'es': 'Anisotropía',
-			'fr': 'Anisotropie',
-			'it': 'Anisotropia',
-			'pt': 'Anisotropia',
-			'ru': 'Анизотропия',
-			'tr': 'Anizotropi',
-			}))
-		
-		self.button.setTitle_(Glyphs.localize({
-			'en': 'Apply',
-			#'cs': 'Apply', todo
-			'de': 'Anwenden',
-			'es': 'Aplicar',
-			'fr': 'Appliquer',
-			'it': 'Applica',
-			'pt': 'Aplicar',
-			'ru': 'Применить',
-			'tr': 'Uygula',
-			}))
+		self.label.setStringValue_(Glyphs.localize(labelTitle))
+		self.button.setTitle_(Glyphs.localize(buttonTitle))
 		
 		Glyphs.addCallback(self.opened, DOCUMENTOPENED)
 		Glyphs.addCallback(self.closed, DOCUMENTCLOSED)
