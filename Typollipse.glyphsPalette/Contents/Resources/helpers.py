@@ -44,28 +44,59 @@ def update(self, anisotropy, paths):
 			width = abs(segment[3].position[0] - segment[0].position[0])
 			height = abs(segment[3].position[1] - segment[0].position[1])
 			curvature = getCurvature(self, anisotropy, segment)
-			
-			xDirection = 1 if segment[3].position[0] > segment[0].position[0] else -1
-			yDirection = 1 if segment[3].position[1] > segment[0].position[1] else -1
+			xDirection = None
+			yDirection = None
+			x1Direction = None
+			y1Direction = None
+			x2Direction = None
+			y2Direction = None
 
-			if segment[1].position[0] != segment[0].position[0]:
+			# Up
+			if segment[3].position[0] > segment[0].position[0]:
+				xDirection = 1
+
+			# Down
+			if segment[3].position[0] < segment[0].position[0]:
+				xDirection = -1
+
+			# Right
+			if segment[3].position[1] > segment[0].position[1]:
+				yDirection = 1
+
+			# Left
+			if segment[3].position[1] < segment[0].position[1]:
+				yDirection = -1
+
+			# Node 1 is a horizontal tangent
+			if segment[1].position[0] != segment[0].position[0] and segment[1].position[1] == segment[0].position[1]:
 				x1Direction = 1
 				y1Direction = 0
-			else:
+
+			# Node 1 is a vertical tangent
+			if segment[1].position[0] == segment[0].position[0] and segment[1].position[1] != segment[0].position[1]:
 				x1Direction = 0
 				y1Direction = 1
 
-			if segment[2].position[0] != segment[3].position[0]:
+			# Node 2 is a horizontal tangent
+			if segment[2].position[0] != segment[3].position[0] and segment[2].position[1] == segment[3].position[1]:
 				x2Direction = 1
 				y2Direction = 0
-			else:
+
+			# Node 2 is a vertical tangent
+			if segment[2].position[0] == segment[3].position[0] and segment[2].position[1] != segment[3].position[1]:
 				x2Direction = 0
 				y2Direction = 1
 
-			x1 = segment[0].position[0] + width * curvature * xDirection * x1Direction
-			y1 = segment[0].position[1] + height * curvature * yDirection * y1Direction
-			x2 = segment[3].position[0] - width * curvature * xDirection * x2Direction
-			y2 = segment[3].position[1] - height * curvature * yDirection * y2Direction
+			# Check if the segment has valid coordinates
+			if all(v is not None for v in [xDirection, yDirection, x1Direction, y1Direction, x2Direction, y2Direction]):
+				x1 = segment[0].position[0] + width * curvature * xDirection * x1Direction
+				y1 = segment[0].position[1] + height * curvature * yDirection * y1Direction
+				x2 = segment[3].position[0] - width * curvature * xDirection * x2Direction
+				y2 = segment[3].position[1] - height * curvature * yDirection * y2Direction
 
-			segment[1].position = NSPoint(x1, y1)
-			segment[2].position = NSPoint(x2, y2)
+				segment[1].position = NSPoint(x1, y1)
+				segment[2].position = NSPoint(x2, y2)
+
+			else:
+				# Inform user that there is an invalid segment
+				pass

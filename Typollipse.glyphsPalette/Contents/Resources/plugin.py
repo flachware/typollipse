@@ -61,9 +61,15 @@ class typollipse (PalettePlugin):
 	@objc.IBAction
 	def handleClick_(self, sender):
 		paths = getPaths(self)
-		
-		update(self, self.anisotropy, paths)
-	
+
+		if paths:
+			update(self, self.anisotropy, paths)
+
+		else:
+			# Inform user that there is no valid selection
+			pass
+
+
 	@objc.python_method
 	def __file__(self):
 		return __file__
