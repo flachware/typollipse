@@ -15,10 +15,14 @@ class typollipse (PalettePlugin):
 	def settings(self):
 		self.name = Glyphs.localize({
 			'en': 'Typollipse',
+			'cs': 'Typolipsa',
 			'de': 'Typollipse',
-			'fr': 'Typollipse',
 			'es': 'Tipolipse',
+			'fr': 'Typollipse',
+			'it': 'Tipollisse',
 			'pt': 'Tipolipse',
+			'ru': 'Типоллипс',
+			'tr': 'Tipolips',
 			})
 
 		# Load .nib dialog (without .extension)
@@ -28,7 +32,14 @@ class typollipse (PalettePlugin):
 	def start(self):
 		self.label.setStringValue_(Glyphs.localize({
 			'en': 'Anisotropy:',
+			'cs': 'Anizotropie',
 			'de': 'Anisotropie:',
+			'es': 'Anisotropía',
+			'fr': 'Anisotropie',
+			'it': 'Anisotropia',
+			'pt': 'Anisotropia',
+			'ru': 'Анизотропия',
+			'tr': 'Anizotropi',
 			}))
 	
 		Glyphs.addCallback(self.opened, DOCUMENTOPENED)
