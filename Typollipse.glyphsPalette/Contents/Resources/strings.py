@@ -24,12 +24,12 @@ labelTitle = {
 
 buttonTitle = {
 	'en': 'Apply',
-	#'cs': 'Apply', todo
+	'cs': 'Aplikovat',
 	'de': 'Anwenden',
 	'es': 'Aplicar',
 	'fr': 'Appliquer',
 	'it': 'Applica',
 	'pt': 'Aplicar',
 	'ru': 'Применить',
-	'tr': 'Uygula',
+	'tr': 'Uygulamak',
 	}
