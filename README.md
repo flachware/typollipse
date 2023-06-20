@@ -1,3 +1,5 @@
+<p align="center"><img src="res/typollipse.svg"></p>
+
 # Typollipse (beta)
 
 Typollipse is a free and open-source plugin for [Glyphs.app](https://glyphsapp.com/) that automatically generates ‘ideal’ base curves. Simply select a curve segment and hit the *Apply* button.
