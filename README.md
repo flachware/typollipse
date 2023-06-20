@@ -19,7 +19,7 @@ Example: you want to design a zero-contrast font that actually has a vertical st
 Unless you don’t want curvature and contrast to be in sync for stylistic reasons. If you are striving for a more ‘boxy’ design, simply increase the *Anisotropy* value. Vice versa you may want to create a high contrast font but do not want to counterbalance the curvature that much, then simply keep the value at around 10%.
 
 ## Installation
-Download this Repository as ZIP file, unzip it, double click on `Typollipse.glyphsPalette` and let Glyphs copy the Plugin to its Plugin Folder.
+Download this repository as ZIP file, unzip it, double click on `Typollipse.glyphsPalette` and let Glyphs copy the plugin to its plugin folder.
 
 ## How to use
 The plugin adds a new palette to the right sidebar. Enter a value for *Anisotropy*, select one or more curve segments, and hit the *Apply* button. The *Anisotropy* value is stored in the project file, hence each project has its own setting.
