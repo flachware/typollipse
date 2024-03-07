@@ -1,11 +1,11 @@
-from bezier import bezier, bezier_prime, bezier_second
+from .bezier import bezier, bezier_prime, bezier_second
 
 
 def getCurvature(self, anisotropy, segment):
 	precision = 6
 	p1 = (segment[0].position[0], segment[0].position[1])
 	p4 = (segment[3].position[0], segment[3].position[1])
-	
+
 	def curvature(x1, x2, x3, x4, y1, y2, y3, y4, t):
 		x_1 = bezier_prime(x1, x2, x3, x4, t)
 		y_1 = bezier_prime(y1, y2, y3, y4, t)
@@ -52,13 +52,13 @@ def getCurvature(self, anisotropy, segment):
 	def create_points(p1, p4, superness):
 		width = abs(p4[0] - p1[0])
 		height = abs(p4[1] - p1[1])
-		
+
 		if height >= width:
 			height = height * (1 + anisotropy)
-		
+
 		else:
 			width = width * (1 + anisotropy)
-		
+
 		d = dict()
 
 		d['x1'] = 0
@@ -99,9 +99,9 @@ def getCurvature(self, anisotropy, segment):
 				c1 = c2
 				c4 = c3
 				current_cv = c2
-			
+
 			#self.logToConsole(current_cv)
-			
+
 			if round(current_cv, precision) == round(superness, precision):
 				searching = False
 
