@@ -4,7 +4,7 @@
 
 Typollipse is a free and open-source plugin for [Glyphs.app](https://glyphsapp.com/) that generates ‘ideal’ base curves as a starting point. Simply select a curve segment and hit the *Apply* button.
 
-Typollipse (short for Typographical Superellipse) uses an algorithm that takes a curve segment as input and minimizes its curvature variation. The result is a curve that looks as ‘round’ as possible. This is the purely geometrical part. In practice, things are a bit more complicated — keep reading about anisotropy below.
+Typollipse (short for Typographical Superellipse) uses an algorithm that takes a curve segment as input and minimizes its curvature peak. The result is a curve that looks as ‘round’ as possible. This is the purely geometrical part. In practice, things are a bit more complicated — keep reading about anisotropy below.
 
 ## Anisotropy
 
