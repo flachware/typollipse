@@ -1,4 +1,4 @@
-from .bezier import bezier, bezier_prime, bezier_second
+from .bezier import bezier_prime, bezier_second
 
 
 def getCurvature(self, anisotropy, segment):
@@ -22,7 +22,7 @@ def getCurvature(self, anisotropy, segment):
 		max_curvature = 0
 		searching = True
 
-		while searching == True:
+		while searching is True:
 			t2 = 2 * t1 / 3 + t4 / 3
 			t3 = t1 / 3 + 2 * t4 / 3
 
@@ -80,7 +80,7 @@ def getCurvature(self, anisotropy, segment):
 		superness = 0
 		searching = True
 
-		while searching == True:
+		while searching is True:
 			c2 = 2 * c1 / 3 + c4 / 3
 			c3 = c1 / 3 + 2 * c4 / 3
 

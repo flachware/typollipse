@@ -8,7 +8,7 @@ pluginName = {
 	'pt': 'Tipolipse',
 	'ru': 'Типоллипс',
 	'tr': 'Tipolips',
-	}
+}
 
 labelTitle = {
 	'en': 'Anisotropy:',
@@ -20,7 +20,7 @@ labelTitle = {
 	'pt': 'Anisotropia:',
 	'ru': 'Анизотропия:',
 	'tr': 'Anizotropi:',
-	}
+}
 
 buttonTitle = {
 	'en': 'Apply',
@@ -32,4 +32,4 @@ buttonTitle = {
 	'pt': 'Aplicar',
 	'ru': 'Применить',
 	'tr': 'Uygulamak',
-	}
+}
