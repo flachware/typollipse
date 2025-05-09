@@ -1,7 +1,6 @@
-from GlyphsApp import *
-from GlyphsApp.plugins import *
+from GlyphsApp import Glyphs, CURVE
 from .algorithm import getCurvature
-
+from AppKit import NSPoint
 
 def getPaths(self):
 	paths = []
@@ -13,7 +12,7 @@ def getPaths(self):
 
 			# Get selected curve nodes only
 			for node in path.nodes:
-				if node.selected is True and node.type is 'curve':
+				if node.selected is True and node.type == CURVE:
 					nodes.append(node)
 
 			for node in nodes:
@@ -28,11 +27,11 @@ def getPaths(self):
 						segment.append(n)
 
 				# Check if the segment is complete
-				if len(segment) is 4:
+				if len(segment) == 4:
 					segments.append(segment)
 
 			# Check if the path has a selected segment
-			if len(segments) is not 0:
+			if len(segments) != 0:
 				paths.append(segments)
 
 	return paths
