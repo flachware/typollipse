@@ -25,27 +25,21 @@ class typollipse(PalettePlugin):
 		self.label.setStringValue_(Glyphs.localize(labelTitle))
 		self.button.setTitle_(Glyphs.localize(buttonTitle))
 
-		Glyphs.addCallback(self.opened, DOCUMENTOPENED)
-		Glyphs.addCallback(self.closed, DOCUMENTCLOSED)
+	@objc.typedSelector(b'v@:@') # void, self, SEL, id
+	def setWindowController_(self, windowController):
+		try:
+			self._windowController = windowController
+		except:
+			LogError(traceback.format_exc())
+		if not windowController:
+			return
 
-	@objc.python_method
-	def opened(self, sender):
-		anisotropy = self.windowController().document().font.userData['anisotropy']
+		anisotropy = windowController.document().font.userData['anisotropy']
 
 		if anisotropy is not None:
 			self.anisotropy = anisotropy
 
 		self.textField.setFloatValue_(self.anisotropy)
-
-	@objc.python_method
-	def closed(self, sender):
-		Glyphs.removeCallback(self.opened)
-		Glyphs.removeCallback(self.closed)
-
-	@objc.python_method
-	def __del__(self):
-		Glyphs.removeCallback(self.opened)
-		Glyphs.removeCallback(self.closed)
 
 	@objc.IBAction
 	def setAnisotropy_(self, sender):
