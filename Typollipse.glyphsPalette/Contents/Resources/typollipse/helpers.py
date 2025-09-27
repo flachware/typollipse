@@ -1,11 +1,11 @@
-from GlyphsApp import Glyphs, CURVE
+from GlyphsApp import CURVE
 from .algorithm import getCurvature
 from AppKit import NSPoint
 
 def getPaths(self):
 	paths = []
 
-	for layer in Glyphs.font.selectedLayers:
+	for layer in self.windowController().selectedLayers():
 		for path in layer.paths:
 			nodes = []
 			segments = []
