@@ -1,6 +1,6 @@
 from __future__ import division, print_function, unicode_literals
 import objc
-from GlyphsApp import Glyphs, DOCUMENTOPENED, DOCUMENTCLOSED
+from GlyphsApp import Glyphs
 from GlyphsApp.plugins import PalettePlugin
 from typollipse.helpers import getPaths, update
 from typollipse.strings import pluginName, labelTitle, buttonTitle
