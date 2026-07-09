@@ -1,6 +1,6 @@
 from __future__ import division, print_function, unicode_literals
 import objc
-from GlyphsApp import Glyphs
+from GlyphsApp import Glyphs, LogError
 from GlyphsApp.plugins import PalettePlugin
 from typollipse.helpers import getPaths, update
 from typollipse.strings import pluginName, labelTitle, buttonTitle
@@ -30,6 +30,7 @@ class typollipse(PalettePlugin):
 		try:
 			self._windowController = windowController
 		except:
+			import traceback
 			LogError(traceback.format_exc())
 		if not windowController:
 			return

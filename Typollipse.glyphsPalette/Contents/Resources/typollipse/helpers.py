@@ -1,6 +1,6 @@
 from GlyphsApp import CURVE
 from .algorithm import getCurvature
-from AppKit import NSPoint
+from Cocoa import NSPoint
 
 def getPaths(self):
 	paths = []
